@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "vite --config /Users/madhukatwa/vite-configs/solutions-build.config.mjs --port 5199 --strictPort",
     "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
-    "build": "vite build --config /Users/madhukatwa/vite-configs/solutions-build.config.mjs",
-    "preview": "vite preview --config /Users/madhukatwa/vite-configs/solutions-build.config.mjs"
+    "build": "vite build",
+    "preview": "vite preview --port 5199 --strictPort"
   },
   "dependencies": {
     "clsx": "^2.1.1",
