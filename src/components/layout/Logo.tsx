@@ -13,9 +13,9 @@ export function LogoMark({ className, size = 30 }: { className?: string; size?: 
     >
       <defs>
         <linearGradient id="amrut-egg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#FFD484" />
-          <stop offset="55%" stopColor="#EFA93A" />
-          <stop offset="100%" stopColor="#CF8A1E" />
+          <stop offset="0%" stopColor="#E7C583" />
+          <stop offset="55%" stopColor="#D9A441" />
+          <stop offset="100%" stopColor="#C9972E" />
         </linearGradient>
       </defs>
       <path
@@ -24,9 +24,9 @@ export function LogoMark({ className, size = 30 }: { className?: string; size?: 
         strokeWidth="1.5"
       />
       <path d="M16 9.4v8.2M11.4 15.2l4.6 2.4 4.6-2.4" stroke="url(#amrut-egg)" strokeWidth="1.25" strokeLinecap="round" opacity="0.85" />
-      <circle cx="16" cy="17.6" r="1.5" fill="#FFD484" />
-      <circle cx="11.4" cy="15.2" r="1.1" fill="#EFA93A" />
-      <circle cx="20.6" cy="15.2" r="1.1" fill="#EFA93A" />
+      <circle cx="16" cy="17.6" r="1.5" fill="#E7C583" />
+      <circle cx="11.4" cy="15.2" r="1.1" fill="#D9A441" />
+      <circle cx="20.6" cy="15.2" r="1.1" fill="#D9A441" />
     </svg>
   );
 }

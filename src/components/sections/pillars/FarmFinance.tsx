@@ -79,7 +79,7 @@ function PeriodLedger() {
 
   return (
     <div ref={ref} className="d3 relative">
-      <Glow from="rgba(239,169,58,0.12)" className="left-1/2 top-0 h-[240px] w-[440px] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.12)" className="left-1/2 top-0 h-[240px] w-[440px] -translate-x-1/2" />
 
       <Panel className="relative" padded>
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -147,13 +147,13 @@ function Flow({
       </span>
       <p className="tnum mt-1.5 text-[1.125rem] font-semibold text-bone sm:text-[1.25rem]">{value}</p>
       <svg viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden className="mt-2.5 h-1 w-full">
-        <line x1="0" y1="2" x2="100" y2="2" stroke="#33403d" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+        <line x1="0" y1="2" x2="100" y2="2" stroke="#2C5A48" strokeWidth="1" vectorEffect="non-scaling-stroke" />
         <line
           x1={direction === 'in' ? '100' : '0'}
           y1="2"
           x2={direction === 'in' ? '0' : '100'}
           y2="2"
-          stroke="#efa93a"
+          stroke="#D9A441"
           strokeWidth="1"
           strokeDasharray="1.5 10"
           vectorEffect="non-scaling-stroke"

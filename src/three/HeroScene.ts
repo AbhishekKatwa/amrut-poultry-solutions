@@ -14,19 +14,19 @@ export interface HeroSceneOptions {
 }
 
 const COLOURS = {
-  ground: 0x0c1110,
-  grid: 0x1e2a27,
-  structure: 0x22302c,
-  roof: 0x2e6b4f,
-  shell: 0x151c1b,
-  metal: 0x2a3634,
-  egg: 0xf3e7d3,
-  bag: 0xb9a06a,
-  tray: 0x39423f,
-  gold: 0xefa93a,
-  goldSoft: 0xffd484,
-  steel: 0x6f97be,
-  paper: 0xf4f1e9,
+  ground: 0x0a2016,
+  grid: 0x245240,
+  structure: 0x206044,
+  roof: 0x38875f,
+  shell: 0x184430,
+  metal: 0x2c6a4d,
+  egg: 0xf6ecd9,
+  bag: 0xc7ae76,
+  tray: 0x357a57,
+  gold: 0xd9a441,
+  goldSoft: 0xe7c583,
+  steel: 0x7fa6cc,
+  paper: 0xf5f1e6,
 };
 
 function roundedRectShape(width: number, height: number, radius: number) {
@@ -87,7 +87,7 @@ function makeScreenTexture(): THREE.CanvasTexture {
     ctx.fillStyle = '#9db8ab';
     ctx.font = '500 18px system-ui, sans-serif';
     ctx.fillText('Poultry Management', 34, 92);
-    ctx.fillStyle = '#f7c25c';
+    ctx.fillStyle = '#e0b04b';
     ctx.font = '600 20px system-ui, sans-serif';
     ctx.fillText('Today', 34, 130);
 
@@ -168,7 +168,7 @@ function makeScreenTexture(): THREE.CanvasTexture {
     ctx.fillStyle = '#123c2a';
     round(28, 928, 456, 66, 12);
     ctx.fill();
-    ctx.fillStyle = '#f7c25c';
+    ctx.fillStyle = '#e0b04b';
     ctx.font = '700 22px system-ui, sans-serif';
     ctx.fillText('Net P&L  +₹1,13,200', 52, 968);
   }
@@ -185,7 +185,7 @@ function makePaperTexture(): THREE.CanvasTexture {
   canvas.height = 340;
   const ctx = canvas.getContext('2d');
   if (ctx) {
-    ctx.fillStyle = '#f4f1e9';
+    ctx.fillStyle = '#f5f1e6';
     ctx.fillRect(0, 0, 256, 340);
     ctx.fillStyle = '#123c2a';
     ctx.fillRect(0, 0, 256, 46);
@@ -219,7 +219,7 @@ function radialGlowTexture(colour: string): THREE.CanvasTexture {
   if (ctx) {
     const gradient = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
     gradient.addColorStop(0, colour);
-    gradient.addColorStop(0.45, 'rgba(239,169,58,0.16)');
+    gradient.addColorStop(0.45, 'rgba(217,164,65,0.16)');
     gradient.addColorStop(1, 'rgba(0,0,0,0)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 256, 256);
@@ -277,7 +277,7 @@ export class HeroScene {
     this.camera.position.set(0, 3.2, 13.2);
     this.camera.lookAt(0, 0.4, 0);
 
-    this.scene.fog = new THREE.FogExp2(0x060808, 0.042);
+    this.scene.fog = new THREE.FogExp2(0x061510, 0.033);
     this.scene.add(this.root);
 
     this.buildLights();
@@ -293,14 +293,16 @@ export class HeroScene {
 
   // ---- construction -------------------------------------------------------
 
+  // Saturated green absorbs more light than the greys these replaced, so the
+  // scene is lit hotter to keep the shed and the device readable.
   private buildLights() {
-    this.scene.add(new THREE.HemisphereLight(0x2c3d38, 0x05070a, 0.7));
+    this.scene.add(new THREE.HemisphereLight(0x356b54, 0x061510, 1.0));
 
-    const key = new THREE.DirectionalLight(0xfff0d4, 1.6);
+    const key = new THREE.DirectionalLight(0xfff0d4, 2.0);
     key.position.set(5, 9, 7);
     this.scene.add(key);
 
-    const rim = new THREE.DirectionalLight(0x6f97be, 0.65);
+    const rim = new THREE.DirectionalLight(0x7fa6cc, 0.8);
     rim.position.set(-7, 2.5, -6);
     this.scene.add(rim);
 
@@ -346,7 +348,7 @@ export class HeroScene {
     this.phone.rotation.set(-0.06, 0.22, 0);
     this.root.add(this.phone);
 
-    const glowTexture = radialGlowTexture('rgba(239,169,58,0.55)');
+    const glowTexture = radialGlowTexture('rgba(217,164,65,0.55)');
     this.textures.push(glowTexture);
     const glow = new THREE.Mesh(
       new THREE.PlaneGeometry(9, 9),
@@ -467,7 +469,7 @@ export class HeroScene {
           new THREE.BoxGeometry(0.16, height, 0.16),
           new THREE.MeshStandardMaterial({
             color: last ? COLOURS.gold : COLOURS.roof,
-            emissive: last ? 0x8a5a10 : 0x0d2419,
+            emissive: last ? 0x8f6a1f : 0x0d2419,
             roughness: 0.42,
             metalness: 0.3,
           }),
@@ -569,7 +571,7 @@ export class HeroScene {
     this.particles = new THREE.Points(
       geometry,
       new THREE.PointsMaterial({
-        color: 0xffe6b0,
+        color: 0xf7e6bd,
         size: 0.045,
         transparent: true,
         opacity: 0.45,

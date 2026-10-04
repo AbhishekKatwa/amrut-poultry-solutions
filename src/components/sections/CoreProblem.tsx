@@ -119,7 +119,7 @@ export function CoreProblem() {
 
   return (
     <Section id="problem" className="border-y border-hairline bg-night-900">
-      <Glow from="rgba(239,169,58,0.09)" className="left-1/2 top-1/3 h-[50vh] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.09)" className="left-1/2 top-1/3 h-[50vh] -translate-x-1/2" />
 
       <div className="mx-auto max-w-[1180px]">
         <Reveal>
@@ -167,8 +167,8 @@ export function CoreProblem() {
               <div
                 className="flex h-[60px] w-[60px] items-center justify-center rounded-full border bg-night-900 sm:h-[72px] sm:w-[72px]"
                 style={{
-                  borderColor: `rgb(239 169 58 / ${(0.18 + t2 * 0.42).toFixed(3)})`,
-                  boxShadow: `0 0 ${Math.round(24 + t2 * 44)}px -8px rgba(239,169,58,${(0.12 + t2 * 0.3).toFixed(3)})`,
+                  borderColor: `rgb(217 164 65 / ${(0.18 + t2 * 0.42).toFixed(3)})`,
+                  boxShadow: `0 0 ${Math.round(24 + t2 * 44)}px -8px rgba(217,164,65,${(0.12 + t2 * 0.3).toFixed(3)})`,
                 }}
               >
                 <span className="text-[0.8125rem] font-semibold tracking-tight text-bone sm:text-sm">Amrut</span>
@@ -193,14 +193,14 @@ export function CoreProblem() {
                   <span
                     className="flex items-center gap-1.5 whitespace-nowrap rounded-full border bg-night-900/85 px-2 py-1 text-[0.625rem] font-medium sm:px-2.5 sm:text-[0.75rem]"
                     style={{
-                      borderColor: blend(t1, [51, 64, 61], [239, 169, 58], lerp(0.6, 0.34, t1)),
+                      borderColor: blend(t1, [51, 64, 61], [217,164,65], lerp(0.6, 0.34, t1)),
                       color: blend(t1, [163, 172, 168], [244, 241, 233], 1),
                     }}
                   >
                     <span
                       aria-hidden
                       className="h-1 w-1 shrink-0 rounded-full"
-                      style={{ backgroundColor: blend(t1, [109, 118, 114], [247, 194, 92], 0.9) }}
+                      style={{ backgroundColor: blend(t1, [109, 118, 114], [224,176,75], 0.9) }}
                     />
                     {n.label}
                   </span>

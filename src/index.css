@@ -3,40 +3,40 @@
 /* ============================================================
    AMRUT POULTRY SOLUTIONS — design tokens
    A technology company with a poultry identity, not a farm site.
-   Near-black ground, warm egg-amber accent, one muted green,
+   Deep emerald ground, brand-gold accent, one muted green,
    one cold blue reserved for data.
    ============================================================ */
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
-  /* Ground */
-  --color-night-950: #060808;
-  --color-night-900: #0a0d0d;
-  --color-night-850: #0e1212;
-  --color-night-800: #121716;
-  --color-night-700: #182120;
-  --color-night-600: #202b29;
-  --color-hairline: #232d2b;
-  --color-hairline-bright: #33403d;
+  /* Ground — the brand's forest ramp, read as emerald rather than black */
+  --color-night-950: #061510;
+  --color-night-900: #0a1f18;
+  --color-night-850: #0e271d;
+  --color-night-800: #123c2a;
+  --color-night-700: #174933;
+  --color-night-600: #1d5a3f;
+  --color-hairline: #1d4235;
+  --color-hairline-bright: #2c5a48;
 
-  /* Warm egg accent */
-  --color-yolk-200: #ffe6b0;
-  --color-yolk-300: #ffd484;
-  --color-yolk-400: #f7c25c;
-  --color-yolk-500: #efa93a;
-  --color-yolk-600: #cf8a1e;
+  /* Gold — the brand's premium metal, used for every accent */
+  --color-yolk-200: #f7e6bd;
+  --color-yolk-300: #e7c583;
+  --color-yolk-400: #e0b04b;
+  --color-yolk-500: #d9a441;
+  --color-yolk-600: #c9972e;
 
   /* Neutrals for type */
-  --color-bone: #f4f1e9;
-  --color-ash: #a3aca8;
-  --color-ash-dim: #6d7672;
+  --color-bone: #f5f1e6;
+  --color-ash: #a9bdb1;
+  --color-ash-dim: #6f8a7b;
 
   /* Support */
-  --color-moss: #4f8a68;
-  --color-moss-deep: #2c5c44;
-  --color-steel: #6f97be;
-  --color-clay: #b4553f;
+  --color-moss: #5fae7f;
+  --color-moss-deep: #2f6b4c;
+  --color-steel: #7fa6cc;
+  --color-clay: #c9694f;
 
   /* The product's own light interface, mirrored so mockups look like the real app */
   --color-paper: #fafaf8;
@@ -154,16 +154,16 @@
   .rim {
     box-shadow:
       inset 0 1px 0 0 rgb(255 255 255 / 0.06),
-      0 24px 60px -30px rgb(0 0 0 / 0.9);
+      0 24px 60px -30px rgb(2 12 8 / 0.85);
   }
 
   .rim-amber {
     box-shadow:
-      inset 0 1px 0 0 rgb(255 212 132 / 0.14),
-      0 30px 80px -40px rgb(239 169 58 / 0.35);
+      inset 0 1px 0 0 rgb(247 230 189 / 0.14),
+      0 30px 80px -40px rgb(217 164 65 / 0.38);
   }
 
-  /* Film grain — keeps the black from looking flat */
+  /* Film grain — keeps the emerald from looking flat */
   .grain::after {
     content: '';
     position: absolute;
@@ -296,8 +296,8 @@
 
 .contact-phone .react-tel-input .form-control:focus {
   background: rgb(255 255 255 / 6%);
-  border-color: rgb(247 194 92 / 55%);
-  box-shadow: 0 0 0 3px rgb(247 194 92 / 12%);
+  border-color: rgb(224 176 75 / 55%);
+  box-shadow: 0 0 0 3px rgb(224 176 75 / 12%);
 }
 
 .contact-phone .react-tel-input .flag-dropdown {

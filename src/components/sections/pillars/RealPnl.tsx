@@ -75,7 +75,7 @@ function NetFigure({ value, active, reduced }: { value: string; active: boolean;
   const margin = ((net / income) * 100).toFixed(1);
   return (
     <div className="relative d3 h-full rounded-card bg-night-800 p-5 ring-1 ring-yolk-500/35 rim-amber sm:p-7">
-      <Glow from="rgba(239,169,58,0.26)" className="left-1/2 top-1/2 h-[200px] w-[112%] -translate-x-1/2 -translate-y-1/2" />
+      <Glow from="rgba(217,164,65,0.26)" className="left-1/2 top-1/2 h-[200px] w-[112%] -translate-x-1/2 -translate-y-1/2" />
       <div
         style={{
           transform: active ? 'translateZ(38px)' : 'translateZ(0)',

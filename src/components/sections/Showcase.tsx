@@ -113,7 +113,7 @@ export function Showcase() {
     <Section id="showcase" container={false} className="border-t border-hairline bg-night-900">
       <div ref={progressRef} className="relative isolate">
         <div aria-hidden className="grain pointer-events-none absolute inset-0 -z-20 rule-grid opacity-50" />
-        <Glow from="rgba(239,169,58,0.12)" className="absolute inset-x-0 top-0 -z-20 h-[50vh]" />
+        <Glow from="rgba(217,164,65,0.12)" className="absolute inset-x-0 top-0 -z-20 h-[50vh]" />
 
         <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8">
           <div className="mx-auto max-w-[52rem] text-center">

@@ -69,7 +69,7 @@ export function Decisions() {
 
   return (
     <Section id="decisions" className="border-t border-hairline bg-night-950">
-      <Glow from="rgba(239,169,58,0.1)" className="left-1/2 top-8 h-[40vh] w-[70vw] max-w-[900px] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.1)" className="left-1/2 top-8 h-[40vh] w-[70vw] max-w-[900px] -translate-x-1/2" />
 
       <Reveal>
         <Eyebrow tone="amber">Built Around The Decisions</Eyebrow>

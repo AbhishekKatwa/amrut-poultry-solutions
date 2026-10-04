@@ -39,7 +39,7 @@ function DepthScene({ progress, pointer }: { progress: number; pointer: { x: num
                 opacity: lerp(0.85, 0.08, t).toFixed(3),
                 background:
                   i % 2 === 0
-                    ? 'linear-gradient(to right, transparent, rgba(247,194,92,0.95) 25%, rgba(255,212,132,1) 50%, rgba(247,194,92,0.95) 75%, transparent)'
+                    ? 'linear-gradient(to right, transparent, rgba(224,176,75,0.95) 25%, rgba(231,197,131,1) 50%, rgba(224,176,75,0.95) 75%, transparent)'
                     : 'linear-gradient(to right, transparent, rgba(244,241,233,0.35) 30%, rgba(244,241,233,0.35) 70%, transparent)',
               }}
             />
@@ -47,7 +47,7 @@ function DepthScene({ progress, pointer }: { progress: number; pointer: { x: num
         })}
         <div
           className="absolute inset-x-[8%] bottom-0 top-0"
-          style={{ background: 'radial-gradient(55% 60% at 50% 92%, rgba(239,169,58,0.22), transparent 70%)' }}
+          style={{ background: 'radial-gradient(55% 60% at 50% 92%, rgba(217,164,65,0.22), transparent 70%)' }}
         />
       </div>
 
@@ -56,7 +56,7 @@ function DepthScene({ progress, pointer }: { progress: number; pointer: { x: num
         <div className="animate-drift-slow">
           <div
             className="h-[26vh] w-[52vw] max-w-[720px] rounded-full blur-[100px]"
-            style={{ background: 'radial-gradient(circle, rgba(239,169,58,0.16), transparent 68%)' }}
+            style={{ background: 'radial-gradient(circle, rgba(217,164,65,0.16), transparent 68%)' }}
           />
         </div>
       </div>
@@ -87,7 +87,7 @@ function PhysicalToFinancial() {
       })}
       <path
         d="M178 22 H224"
-        stroke="rgba(239,169,58,0.5)"
+        stroke="rgba(217,164,65,0.5)"
         strokeWidth="1"
         strokeDasharray="4 5"
         className="animate-dash"
@@ -95,16 +95,16 @@ function PhysicalToFinancial() {
       <path
         d="M232 8 L248 22 L232 36"
         fill="none"
-        stroke="rgba(239,169,58,0.6)"
+        stroke="rgba(217,164,65,0.6)"
         strokeWidth="1.25"
         strokeLinecap="round"
       />
       <rect x="262" y="15" width="90" height="14" rx="7" fill="url(#amrut-finalcta-bar)" />
       <defs>
         <linearGradient id="amrut-finalcta-bar" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor="#cf8a1e" />
-          <stop offset="0.55" stopColor="#f7c25c" />
-          <stop offset="1" stopColor="#ffd484" />
+          <stop offset="0" stopColor="#C9972E" />
+          <stop offset="0.55" stopColor="#E0B04B" />
+          <stop offset="1" stopColor="#E7C583" />
         </linearGradient>
       </defs>
     </svg>
@@ -123,7 +123,7 @@ export function FinalCta() {
     <div ref={ref} className="relative">
       <Section id="trial" container={false} className="bg-night-950">
         <DepthScene progress={progress} pointer={pointer} />
-        <Glow from="rgba(239,169,58,0.18)" className="left-1/2 top-[38%] h-[50vh] w-[80vw] -translate-x-1/2" />
+        <Glow from="rgba(217,164,65,0.18)" className="left-1/2 top-[38%] h-[50vh] w-[80vw] -translate-x-1/2" />
 
         {/* vignette into the footer */}
         <div

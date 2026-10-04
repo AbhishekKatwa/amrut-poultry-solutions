@@ -58,7 +58,7 @@ function Tray({
     <div
       className="relative rounded-[12px] ring-1 ring-hairline/80"
       style={{
-        background: 'linear-gradient(155deg, rgba(26,35,34,0.96), rgba(9,12,12,0.94))',
+        background: 'linear-gradient(155deg, rgba(22,58,42,0.96), rgba(8,26,19,0.94))',
         boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 34px -22px rgba(0,0,0,0.9)',
         transform: active ? `translateZ(${lift}px)` : 'translateZ(-72px)',
         opacity: active ? (dim ? 0.78 : 1) : 0,
@@ -93,7 +93,7 @@ function TrayScene() {
 
   return (
     <div ref={ref} className="d3 relative pb-1">
-      <Glow from="rgba(239,169,58,0.16)" className="left-1/2 top-6 h-[300px] w-[520px] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.16)" className="left-1/2 top-6 h-[300px] w-[520px] -translate-x-1/2" />
 
       <div className="d3 relative h-[172px] sm:h-[212px] lg:h-[252px]">
         <div
@@ -113,7 +113,7 @@ function TrayScene() {
           aria-hidden
           className="d3 absolute inset-x-[6%] top-1/2 h-[120px] -translate-y-1/2 rounded-[50%] opacity-70 blur-2xl"
           style={{
-            background: 'radial-gradient(50% 50% at 50% 50%, rgba(239,169,58,0.14), transparent 70%)',
+            background: 'radial-gradient(50% 50% at 50% 50%, rgba(217,164,65,0.14), transparent 70%)',
             transform: `translateY(-50%) rotateX(${baseX}deg)`,
           }}
         />

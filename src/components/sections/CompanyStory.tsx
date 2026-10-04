@@ -272,7 +272,7 @@ export function CompanyStory() {
 
   return (
     <Section id="story">
-      <Glow from="rgba(239,169,58,0.10)" className="left-1/2 top-16 h-[40vh] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.10)" className="left-1/2 top-16 h-[40vh] -translate-x-1/2" />
 
       <div className="grid items-center gap-10 lg:grid-cols-12">
         {/* the company, in plain words */}
@@ -334,7 +334,7 @@ export function CompanyStory() {
                         style={{
                           left: 'calc(5% + var(--ps) * 90%)',
                           opacity: 'calc(var(--osc) * 0.55)',
-                          background: 'linear-gradient(90deg, transparent, rgba(239,169,58,0.35), transparent)',
+                          background: 'linear-gradient(90deg, transparent, rgba(217,164,65,0.35), transparent)',
                         }}
                       />
                     </div>

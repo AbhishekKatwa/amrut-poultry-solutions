@@ -20,12 +20,12 @@ function RecordField({ progress }: { progress: number }) {
         className="absolute inset-x-[6%] top-[30%] h-px"
         style={{
           background:
-            'linear-gradient(to right, transparent, rgba(239,169,58,0.45) 24%, rgba(255,212,132,0.8) 50%, rgba(239,169,58,0.45) 76%, transparent)',
+            'linear-gradient(to right, transparent, rgba(217,164,65,0.45) 24%, rgba(231,197,131,0.8) 50%, rgba(217,164,65,0.45) 76%, transparent)',
         }}
       />
       <div
         className="absolute inset-x-[10%] top-[16%] bottom-[34%] blur-[70px]"
-        style={{ background: 'radial-gradient(60% 100% at 50% 100%, rgba(239,169,58,0.18), transparent 70%)' }}
+        style={{ background: 'radial-gradient(60% 100% at 50% 100%, rgba(217,164,65,0.18), transparent 70%)' }}
       />
 
       <div
@@ -55,7 +55,7 @@ function RecordField({ progress }: { progress: number }) {
                 opacity: lerp(0.5, 0.07, t).toFixed(3),
                 background:
                   i % 3 === 0
-                    ? 'linear-gradient(to right, transparent, rgba(239,169,58,0.9) 20%, rgba(239,169,58,0.9) 80%, transparent)'
+                    ? 'linear-gradient(to right, transparent, rgba(217,164,65,0.9) 20%, rgba(217,164,65,0.9) 80%, transparent)'
                     : 'linear-gradient(to right, transparent, rgba(244,241,233,0.5) 18%, rgba(244,241,233,0.5) 82%, transparent)',
               }}
             />
@@ -75,7 +75,7 @@ export function Vision() {
   return (
     <div ref={ref} className="relative">
       <Section id="vision" className="bg-night-950">
-        <Glow from="rgba(239,169,58,0.09)" className="left-1/2 top-[24%] h-[54vh] w-[86vw] -translate-x-1/2" />
+        <Glow from="rgba(217,164,65,0.09)" className="left-1/2 top-[24%] h-[54vh] w-[86vw] -translate-x-1/2" />
         <RecordField progress={progress} />
 
         <div className="relative z-10 mx-auto max-w-[58rem]">

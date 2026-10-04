@@ -81,9 +81,9 @@ function SystemPlate() {
         >
           <defs>
             <radialGradient id="eco-floor" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="rgba(239,169,58,0.16)" />
-              <stop offset="60%" stopColor="rgba(239,169,58,0.04)" />
-              <stop offset="100%" stopColor="rgba(239,169,58,0)" />
+              <stop offset="0%" stopColor="rgba(217,164,65,0.16)" />
+              <stop offset="60%" stopColor="rgba(217,164,65,0.04)" />
+              <stop offset="100%" stopColor="rgba(217,164,65,0)" />
             </radialGradient>
           </defs>
 
@@ -93,7 +93,7 @@ function SystemPlate() {
             cy="50"
             r={RING_R}
             fill="none"
-            stroke="#33403d"
+            stroke="#356B54"
             strokeWidth="1"
             strokeDasharray="2 5"
             vectorEffect="non-scaling-stroke"
@@ -103,12 +103,12 @@ function SystemPlate() {
             cy="50"
             r={INNER_R}
             fill="none"
-            stroke="#33403d"
+            stroke="#356B54"
             strokeWidth="1"
             vectorEffect="non-scaling-stroke"
-          />
+    />
 
-          {nodes.map((node) => (
+    {nodes.map((node) => (
             <g key={node.label}>
               {/* the static spoke: node → the business in the middle */}
               <line
@@ -116,7 +116,7 @@ function SystemPlate() {
                 y1={node.point.y}
                 x2="50"
                 y2="50"
-                stroke="#2b3735"
+                stroke="#2C5A48"
                 strokeWidth="1"
                 vectorEffect="non-scaling-stroke"
               />
@@ -126,17 +126,17 @@ function SystemPlate() {
                 y1={node.point.y}
                 x2="50"
                 y2="50"
-                stroke="#efa93a"
+                stroke="#D9A441"
                 strokeWidth="1"
                 strokeDasharray="1.5 11"
                 strokeLinecap="round"
                 vectorEffect="non-scaling-stroke"
                 className="animate-dash opacity-70"
               />
-              <circle cx={node.point.x} cy={node.point.y} r="0.9" fill="#efa93a" opacity="0.6" />
+              <circle cx={node.point.x} cy={node.point.y} r="0.9" fill="#D9A441" opacity="0.6" />
             </g>
           ))}
-          <circle cx="50" cy="50" r="1.4" fill="#f7c25c" />
+          <circle cx="50" cy="50" r="1.4" fill="#E0B04B" />
         </svg>
 
         {/* centre: the company */}
@@ -212,13 +212,13 @@ function SystemChain() {
             {i < PIPELINE.length - 1 ? (
               <div className="flex justify-center">
                 <svg viewBox="0 0 4 26" aria-hidden className="h-6 w-1">
-                  <line x1="2" y1="0" x2="2" y2="26" stroke="#33403d" strokeWidth="1" />
+                  <line x1="2" y1="0" x2="2" y2="26" stroke="#2C5A48" strokeWidth="1" />
                   <line
                     x1="2"
                     y1="0"
                     x2="2"
                     y2="26"
-                    stroke="#efa93a"
+                    stroke="#D9A441"
                     strokeWidth="1"
                     strokeDasharray="1.5 7"
                     className="animate-dash opacity-75"
@@ -253,7 +253,7 @@ export function Ecosystem() {
     <Section id="how-it-works" container={false} className="border-t border-hairline bg-night-950">
       <div ref={ref} className="relative isolate">
         <div aria-hidden className="grain pointer-events-none absolute inset-0 -z-20 rule-grid opacity-60" />
-        <Glow from="rgba(239,169,58,0.2)" className="absolute inset-x-0 top-1/4 -z-20 h-[60vh]" />
+        <Glow from="rgba(217,164,65,0.2)" className="absolute inset-x-0 top-1/4 -z-20 h-[60vh]" />
 
         <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8">
           <div className="mx-auto max-w-[54rem] text-center">

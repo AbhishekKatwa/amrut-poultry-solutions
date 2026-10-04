@@ -70,12 +70,12 @@ export function ScreenFrame({
   return (
     <div
       className={clsx(
-        'relative overflow-hidden rounded-panel bg-night-900 ring-1 ring-hairline rim',
+        'relative flex flex-col overflow-hidden rounded-panel bg-night-900 ring-1 ring-hairline rim',
         className,
       )}
     >
       {bare ? null : (
-        <div className="flex items-center gap-3 border-b border-hairline bg-night-850/90 px-4 py-2.5">
+        <div className="flex shrink-0 items-center gap-3 border-b border-hairline bg-night-850/90 px-4 py-2.5">
           <span aria-hidden className="flex gap-1.5">
             <i className="h-2 w-2 rounded-full bg-hairline-bright" />
             <i className="h-2 w-2 rounded-full bg-hairline-bright" />
@@ -86,7 +86,7 @@ export function ScreenFrame({
           </span>
         </div>
       )}
-      <div className="relative">{children}</div>
+      <div className="relative min-h-0 flex-1">{children}</div>
     </div>
   );
 }

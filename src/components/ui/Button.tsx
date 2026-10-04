@@ -6,7 +6,7 @@ type Variant = 'primary' | 'secondary' | 'ghost';
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    'bg-yolk-400 text-night-950 hover:bg-yolk-300 shadow-[0_18px_44px_-22px_rgba(247,194,92,0.75)] hover:shadow-[0_22px_54px_-20px_rgba(247,194,92,0.85)]',
+    'bg-yolk-400 text-night-950 hover:bg-yolk-300 shadow-[0_18px_44px_-22px_rgba(224,176,75,0.75)] hover:shadow-[0_22px_54px_-20px_rgba(224,176,75,0.85)]',
   secondary: 'bg-night-800/70 text-bone ring-1 ring-hairline-bright hover:bg-night-700 hover:ring-yolk-500/40',
   ghost: 'bg-transparent text-ash hover:text-bone ring-1 ring-transparent hover:ring-hairline',
 };

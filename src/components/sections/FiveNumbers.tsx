@@ -42,7 +42,7 @@ export function FiveNumbers() {
 
   return (
     <Section id="numbers" className="border-t border-hairline bg-night-900">
-      <Glow from="rgba(239,169,58,0.13)" className="left-1/2 top-10 h-[45vh] w-[80vw] max-w-[1000px] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.13)" className="left-1/2 top-10 h-[45vh] w-[80vw] max-w-[1000px] -translate-x-1/2" />
 
       <div className="max-w-[56rem]">
         <Reveal>

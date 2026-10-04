@@ -47,7 +47,7 @@ export function Hero() {
           style={{
             right: '-10%',
             top: '12%',
-            background: 'radial-gradient(circle, rgba(239,169,58,0.20), transparent 65%)',
+            background: 'radial-gradient(circle, rgba(217,164,65,0.20), transparent 65%)',
           }}
         />
         <div
@@ -70,8 +70,8 @@ export function Hero() {
             className="absolute inset-0 -z-10"
             style={{
               background:
-                'radial-gradient(45% 45% at 50% 55%, rgba(239,169,58,0.16), transparent 70%), conic-gradient(from 180deg at 50% 55%, rgba(255,255,255,0.04), transparent 40%)',
-              boxShadow: 'inset 0 0 120px 40px rgba(6,8,8,0.9)',
+                'radial-gradient(45% 45% at 50% 55%, rgba(217,164,65,0.16), transparent 70%), conic-gradient(from 180deg at 50% 55%, rgba(255,255,255,0.04), transparent 40%)',
+              boxShadow: 'inset 0 0 120px 40px rgba(6,21,16,0.9)',
             }}
           />
         </div>

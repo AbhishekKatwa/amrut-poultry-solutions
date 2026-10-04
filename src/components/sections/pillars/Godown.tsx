@@ -25,7 +25,7 @@ const EXTRUDE_STEPS = 5;
 const EXTRUDE_GAP = 7;
 
 const MAX_COVERAGE = ITEMS.reduce((max, item) => Math.max(max, item.coverage), 0);
-const MIN_COVERAGE = ITEMS.reduce((min, item) => Math.min(min, item.coverage), 0);
+const MIN_COVERAGE = Math.min(...ITEMS.map((item) => item.coverage));
 
 /** Slab length is days of coverage, so the tightest shelf is visibly the shortest. */
 const lengthOf = (coverage: number) => 26 + (coverage / MAX_COVERAGE) * 74;
@@ -48,48 +48,57 @@ function Shelf({
 
   return (
     <div
-      className="d3 relative h-[clamp(30px,4.4vw,42px)] w-full"
+      className="d3 relative flex h-[clamp(30px,4.4vw,42px)] w-full items-center gap-2.5"
       style={{
         opacity: active ? 1 : 0,
         transform: active ? 'translateZ(0)' : 'translateZ(-26px)',
         transition: reduced ? undefined : `opacity 700ms ease ${delay}ms, transform 900ms cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
       }}
     >
-      {layers.map((i) => (
+      {/* the slab track keeps the money column outside it, so a short shelf never clips its figure */}
+      <div className="d3 relative h-full flex-1">
+        {layers.map((i) => (
+          <div
+            key={i}
+            aria-hidden
+            className="absolute inset-y-0 left-0 rounded-[5px] ring-1 ring-hairline/70"
+            style={{
+              width,
+              transform: `translateZ(${-i * EXTRUDE_GAP}px)`,
+              background: 'linear-gradient(180deg, rgba(16,44,32,0.9), rgba(7,23,17,0.9))',
+            }}
+          />
+        ))}
+
         <div
-          key={i}
-          aria-hidden
-          className="absolute inset-y-0 left-0 rounded-[5px] ring-1 ring-hairline/70"
+          className={clsx(
+            'absolute inset-y-0 left-0 flex items-center rounded-[5px] px-3 ring-1',
+            tight ? 'ring-clay/55' : 'ring-hairline-bright/80',
+          )}
           style={{
             width,
-            transform: `translateZ(${-i * EXTRUDE_GAP}px)`,
-            background: 'linear-gradient(180deg, rgba(20,28,27,0.9), rgba(8,11,11,0.9))',
+            background: tight
+              ? 'linear-gradient(160deg, rgba(46,24,20,0.96), rgba(12,10,10,0.96))'
+              : 'linear-gradient(160deg, rgba(26,64,46,0.97), rgba(9,29,21,0.97))',
+            boxShadow: tight
+              ? 'inset 0 1px 0 rgba(180,85,63,0.34), 0 16px 30px -22px rgba(0,0,0,0.9)'
+              : 'inset 0 1px 0 rgba(231,197,131,0.2), 0 16px 30px -22px rgba(0,0,0,0.9)',
           }}
-        />
-      ))}
-
-      <div
-        className={clsx(
-          'absolute inset-y-0 left-0 flex items-center justify-between gap-3 rounded-[5px] px-3 ring-1',
-          tight ? 'ring-clay/55' : 'ring-hairline-bright/80',
-        )}
-        style={{
-          width,
-          background: tight
-            ? 'linear-gradient(160deg, rgba(46,24,20,0.96), rgba(12,10,10,0.96))'
-            : 'linear-gradient(160deg, rgba(31,42,40,0.97), rgba(10,14,13,0.97))',
-          boxShadow: tight
-            ? 'inset 0 1px 0 rgba(180,85,63,0.34), 0 16px 30px -22px rgba(0,0,0,0.9)'
-            : 'inset 0 1px 0 rgba(255,212,132,0.2), 0 16px 30px -22px rgba(0,0,0,0.9)',
-        }}
-      >
-        <span className={clsx('truncate text-[0.6875rem] font-semibold sm:text-[0.75rem]', tight ? 'text-clay' : 'text-bone')}>
-          {item.name}
-        </span>
-        <span className={clsx('tnum shrink-0 text-[0.625rem] font-semibold sm:text-[0.6875rem]', tight ? 'text-clay/90' : 'text-yolk-300/90')}>
-          {inrCompact(item.value)}
-        </span>
+        >
+          <span className={clsx('truncate text-[0.6875rem] font-semibold sm:text-[0.75rem]', tight ? 'text-clay' : 'text-bone')}>
+            {item.name}
+          </span>
+        </div>
       </div>
+
+      <span
+        className={clsx(
+          'tnum w-[58px] shrink-0 text-right text-[0.625rem] font-semibold sm:w-[72px] sm:text-[0.6875rem]',
+          tight ? 'text-clay/90' : 'text-yolk-300/90',
+        )}
+      >
+        {inrCompact(item.value)}
+      </span>
     </div>
   );
 }
@@ -109,13 +118,13 @@ function GodownRack() {
 
   return (
     <div ref={ref} className="d3 relative">
-      <Glow from="rgba(239,169,58,0.15)" className="left-1/2 top-0 h-[280px] w-[460px] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.15)" className="left-1/2 top-0 h-[280px] w-[460px] -translate-x-1/2" />
 
       <div
         className="d3 relative rounded-panel px-3 pb-4 pt-5 sm:px-5"
         style={{
           transform: `rotateY(${rotY.toFixed(2)}deg) rotateX(${rotX.toFixed(2)}deg)`,
-          background: 'linear-gradient(180deg, rgba(14,18,18,0.7), rgba(6,8,8,0.4))',
+          background: 'linear-gradient(180deg, rgba(14,39,29,0.7), rgba(6,21,16,0.4))',
         }}
       >
         {/* rack uprights */}

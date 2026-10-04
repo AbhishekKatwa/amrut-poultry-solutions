@@ -37,7 +37,7 @@ export function Panel({
 /** Out-of-focus light. Used sparingly so black never reads as empty. */
 export function Glow({
   className,
-  from = 'rgba(239,169,58,0.22)',
+  from = 'rgba(217,164,65,0.22)',
 }: {
   className?: string;
   from?: string;

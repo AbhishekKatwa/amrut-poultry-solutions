@@ -69,7 +69,7 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
             className={clsx('flex h-full flex-col p-6 sm:p-7', featured && 'sm:p-8')}
           >
             {featured ? (
-              <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-yolk-400 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-[0.18em] text-night-950 shadow-[0_10px_26px_-12px_rgba(247,194,92,0.8)] sm:left-7">
+              <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-yolk-400 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-[0.18em] text-night-950 shadow-[0_10px_26px_-12px_rgba(224,176,75,0.8)] sm:left-7">
                 MOST POPULAR
               </span>
             ) : null}
@@ -116,7 +116,7 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
 export function Pricing() {
   return (
     <Section id="pricing" width="wide" className="border-y border-hairline bg-night-900">
-      <Glow from="rgba(239,169,58,0.11)" className="left-1/2 top-0 h-[42vh] w-[70vw] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.11)" className="left-1/2 top-0 h-[42vh] w-[70vw] -translate-x-1/2" />
 
       <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-7">

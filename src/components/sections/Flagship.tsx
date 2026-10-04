@@ -21,7 +21,7 @@ export function Flagship() {
 
   return (
     <Section id="product" width="wide" className="border-y border-hairline bg-night-900">
-      <Glow from="rgba(239,169,58,0.13)" className="left-1/2 top-10 h-[45vh] -translate-x-1/2" />
+      <Glow from="rgba(217,164,65,0.13)" className="left-1/2 top-10 h-[45vh] -translate-x-1/2" />
 
       <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
