@@ -38,7 +38,7 @@ export function Button({
   const magnet = useMagnetic(0.18, !magnetic || reduced || coarse);
 
   const classes = clsx(
-    'group relative inline-flex items-center justify-center gap-2 rounded-control font-medium tracking-tight',
+    'group relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-control font-medium tracking-tight',
     'transition-[background-color,color,box-shadow,transform] duration-300 ease-out select-none',
     size === 'sm' && 'px-4 py-2 text-[0.8125rem]',
     size === 'md' && 'px-5 py-2.5 text-[0.9375rem]',

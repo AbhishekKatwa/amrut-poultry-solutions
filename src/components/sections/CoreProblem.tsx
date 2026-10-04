@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { DATA_POINTS, PIPELINE } from '@/lib/content';
+import { DATA_POINTS, PIPELINE, WHY } from '@/lib/content';
 import {
   clamp,
   lerp,
@@ -10,13 +10,15 @@ import {
 } from '@/lib/motion';
 import { Section } from '@/components/layout/Section';
 import { Reveal } from '@/components/ui/Reveal';
-import { Display, Eyebrow } from '@/components/ui/Type';
-import { Glow } from '@/components/ui/Surface';
+import { Display, Eyebrow, Lede } from '@/components/ui/Type';
+import { Glow, Rule } from '@/components/ui/Surface';
 
 /* ============================================================
-   §7 — The core problem. The twelve numbers a poultry business
-   produces, first scattered and disconnected, then settling into
-   an ordered field with hairline edges converging on one node.
+   §7 — WHY. Opens on the objection the owner actually has ("I am
+   already managing the farm"), answers it with the twelve numbers
+   a farm produces — first scattered and disconnected, then settling
+   into an ordered field with hairline edges converging on one node —
+   and closes on the four things a diary structurally cannot give back.
 
    Node positions are computed once (golden-angle scatter → tidy
    barrel columns) with zero randomness at render. The settle
@@ -123,14 +125,19 @@ export function CoreProblem() {
 
       <div className="mx-auto max-w-[1180px]">
         <Reveal>
-          <Eyebrow tone="bone">The problem</Eyebrow>
-          <Display size="lg" className="mt-6 max-w-[16ch]">
-            A poultry business generates thousands of numbers.
+          <Eyebrow tone="bone">Why an app</Eyebrow>
+          <Display size="lg" className="mt-6 max-w-[17ch]">
+            {WHY.headline}
           </Display>
+          <Lede className="mt-7 max-w-[68ch]">{WHY.lede}</Lede>
         </Reveal>
 
-        {/* the field */}
-        <div ref={fieldRef} className="mt-10 sm:mt-14">
+        {/* the field: what the farm really produces */}
+        <div ref={fieldRef} className="mt-12 sm:mt-16">
+          <p className="mx-auto max-w-[52ch] text-center text-[0.8125rem] font-semibold uppercase tracking-[0.18em] text-ash-dim">
+            A working farm produces thousands of numbers a month. Each one is real. Almost none of them reach each
+            other.
+          </p>
           <div
             ref={driftRef}
             className="relative mx-auto h-[clamp(380px,62svh,540px)] w-full max-w-[880px]"
@@ -225,11 +232,54 @@ export function CoreProblem() {
           </div>
         </div>
 
+        {/* the four things a diary structurally cannot hand back */}
+        <div className="mt-20 sm:mt-28">
+          <Reveal>
+            <Eyebrow tone="amber">What the record cannot answer</Eyebrow>
+          </Reveal>
+          <div className="mt-8">
+            {/* one header row carries the column meanings, so no label repeats down the list */}
+            <div className="hidden text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-ash-dim md:mb-2 md:grid md:grid-cols-12 md:gap-x-8">
+              <span className="md:col-span-4 md:col-start-2">Your record already holds</span>
+              <span className="md:col-span-3 md:col-start-6">But it can never give</span>
+              <span className="md:col-span-4 md:col-start-9">Why</span>
+            </div>
+            {WHY.gaps.map((gap, i) => (
+              <div key={gap.never}>
+                {i > 0 ? <Rule /> : null}
+                <Reveal delay={i * 60} className="grid gap-x-8 gap-y-6 py-8 md:grid-cols-12 md:items-baseline md:gap-y-3">
+                  <span className="tnum text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-yolk-500/70 md:col-span-1">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className="md:col-span-4">
+                    <p className="mb-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-ash-dim md:hidden">
+                      Your record already holds
+                    </p>
+                    <p className="text-[clamp(1.0625rem,1.9vw,1.4375rem)] font-semibold leading-snug tracking-[-0.025em] text-bone">
+                      {gap.recorded}
+                    </p>
+                  </div>
+                  <div className="md:col-span-3">
+                    <p className="mb-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-ash-dim md:hidden">
+                      But it can never give
+                    </p>
+                    <p className="text-[clamp(1.0625rem,1.9vw,1.4375rem)] font-semibold leading-snug tracking-[-0.025em] text-yolk-300">
+                      {gap.never}
+                    </p>
+                  </div>
+                  <p className="max-w-[54ch] text-[0.9375rem] leading-relaxed text-ash md:col-span-4">{gap.detail}</p>
+                </Reveal>
+              </div>
+            ))}
+            <Rule />
+          </div>
+        </div>
+
         {/* the closing statement */}
         <Reveal delay={80} className="mt-16 sm:mt-20">
-          <Display size="lg" className="mx-auto max-w-[24ch] text-center">
-            The numbers are connected.
-            <span className="mt-2 block text-yolk-300">Your system should be too.</span>
+          <Display size="lg" className="mx-auto max-w-[26ch] text-center">
+            {WHY.closing.line}
+            <span className="mt-2 block text-yolk-300">{WHY.closing.accent}</span>
           </Display>
         </Reveal>
       </div>

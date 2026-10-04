@@ -8,7 +8,9 @@
 export const BRAND = {
   company: 'Amrut Poultry Solutions',
   product: 'Amrut Poultry Management',
-  positioning: 'Technology for modern poultry businesses.',
+  positioning: 'A one-stop solution for poultry.',
+  /** The owner's own second line — what the one-stop claim actually delivers. */
+  strapline: 'Handy information at your fingertips.',
   promise: 'Run your poultry business with clarity.',
   summary:
     'Amrut Poultry Solutions builds practical technology that connects poultry operations, inventory, egg sales, traders and financial performance.',
@@ -24,6 +26,8 @@ export const BRAND = {
 } as const;
 
 export const NAV = [
+  { label: 'Why', href: '#problem' },
+  { label: 'When', href: '#when' },
   { label: 'Product', href: '#product' },
   { label: 'Solutions', href: '#solutions' },
   { label: 'How It Works', href: '#how-it-works' },
@@ -47,6 +51,107 @@ export const DATA_POINTS = [
   'Payments',
   'Revenue',
   'Profit',
+] as const;
+
+/* ============================================================
+   THE ARGUMENT — why, when, how. Stated against the way the farm is
+   already run (diary, calculator, memory), never against the owner.
+   No invented losses, no invented customers, no statistics.
+   ============================================================ */
+
+export const WHY = {
+  headline: "You're already managing the farm.",
+  lede: 'Of course you are. Almost every poultry business is run from a diary, a calculator and a very good memory — and that combination gets the birds fed, the eggs collected and the money collected. The question is not whether you can run it. The question is what a diary can never hand back.',
+  /** What the manual record does hold, next to what it structurally cannot produce. */
+  gaps: [
+    {
+      recorded: 'Trays that left the farm',
+      never: 'What that load cost you',
+      detail:
+        'A register holds trays and rate. The feed, chick, medicine and labour behind those eggs sit in four different places, so the sale lands as income and the cost stays invisible.',
+    },
+    {
+      recorded: 'Feed bags purchased',
+      never: 'What each shed actually consumed',
+      detail:
+        'Purchases arrive in the godown; consumption happens shed by shed, day by day. Record one side and per-shed cost is an estimate you repeat, not a number you can check.',
+    },
+    {
+      recorded: 'Payments traders handed you',
+      never: 'Exactly who still owes you',
+      detail:
+        'The balance lives in your diary and in the trader’s book. When the two disagree, only one of them can be proved, and it is usually his.',
+    },
+    {
+      recorded: 'Cash that came and went',
+      never: 'Whether the month earned anything',
+      detail:
+        'Cash moved is not profit. A maize stock you paid for is still inventory, the birds are still growing, and next month’s feed is already spent in this month’s hand.',
+    },
+  ],
+  closing: {
+    line: 'None of this says you are managing badly.',
+    accent: 'It says a diary cannot do arithmetic.',
+  },
+} as const;
+
+export const WHEN = {
+  headline: 'You do not need a system for one shed.',
+  lede: 'A single shed, cash sales and your own handwriting is a manageable business. Signs the manual way starts costing you — usually the week one of them appears.',
+  triggers: [
+    {
+      sign: 'A second shed, or two batches that overlap',
+      cost: 'Costs begin to mix. Which flock ate that maize becomes a guess, and guesses average out.',
+    },
+    {
+      sign: 'Eggs going out on credit',
+      cost: 'Receivables turn into a second book you keep by hand, updated only when someone calls to pay.',
+    },
+    {
+      sign: 'Somebody else records the day',
+      cost: 'Then the record has to carry a date, a shed and a name — yours is not the only memory in the farm.',
+    },
+    {
+      sign: 'Feed bought in bulk, drawn shed-wise',
+      cost: 'Stock and consumption are two different questions, and a purchase diary can only answer the first.',
+    },
+    {
+      sign: 'You want the number per batch',
+      cost: 'Not whether the farm paid. Whether this flock paid, before the next one is placed on the strength of it.',
+    },
+    {
+      sign: 'A bank, partner or audit asks to see it',
+      cost: 'Memory is not a statement. The ask arrives on a date, and the reconstruction takes a week.',
+    },
+  ],
+  notYet: {
+    title: 'You may not need it yet',
+    lines: [
+      'One shed, one batch at a time, cash sales only.',
+      'You make every entry yourself, on the day it happens.',
+      'You can already state this month’s profit, shed by shed, without opening the diary.',
+    ],
+    note: 'Then a register is the right tool for now. Buy the system the week that stops being true — not the week a website tells you to.',
+  },
+} as const;
+
+/** The mechanism, in the order it actually happens on the farm. */
+export const HOW_STEPS = [
+  {
+    n: '01',
+    title: 'Record the day, at the shed',
+    body: 'Feed rounds, egg collections, mortality, purchases, sales, expenses, receipts. Every entry carries a date, a shed or batch, and whose entry it was. That is the entire input — a few minutes of typing by the people already doing the work.',
+  },
+  {
+    n: '02',
+    title: 'Both sides are kept, once',
+    body: 'Feed bought into the godown is stock; feed drawn by shed is that shed’s expense. A load of eggs billed is income for the period and a balance on the trader’s account at the same moment. Nothing is typed twice, so nothing can drift apart.',
+  },
+  {
+    n: '03',
+    title: 'Then any question, any date',
+    body: 'Egg stock and coverage, godown value, trader balances, expense breakdown, per-shed and per-batch P&L — computed from the entries that already exist, for the period you ask for. No month-end reconciliation, no waiting for someone to summarise.',
+  },
 ] as const;
 
 export type ScreenName =
@@ -152,7 +257,8 @@ export const PLANS = [
 ];
 
 export const PLAN_NOTE = {
-  trial: '30-day full-access trial',
+  trial: 'First month free',
+  trialNote: 'Every plan starts with a full month at no cost — all modules, no charge until it ends.',
   onboarding: 'Optional assisted onboarding',
   /** Never bundled into the monthly or yearly price. */
   onboardingNote: 'Charged separately from the subscription',

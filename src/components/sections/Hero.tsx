@@ -89,7 +89,7 @@ export function Hero() {
         <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-5 pt-28 pb-16 sm:px-8">
           <div className="max-w-[46rem]">
             <Reveal direction="fade">
-              <Eyebrow>{BRAND.company}</Eyebrow>
+              <Eyebrow>{BRAND.positioning}</Eyebrow>
             </Reveal>
             <Reveal delay={90}>
               <Display as="h1" size="hero" className="mt-7">
@@ -97,13 +97,18 @@ export function Hero() {
                 <span className="text-yolk-300">actually work.</span>
               </Display>
             </Reveal>
-            <Reveal delay={220}>
-              <Lede className="mt-7 max-w-[40ch] text-[clamp(1.0625rem,1.6vw,1.3125rem)]">
-                From daily farm operations to egg sales, inventory, traders and profitability, Amrut connects the
-                numbers that matter.
+            <Reveal delay={200}>
+              <p className="mt-7 text-[clamp(1.0625rem,1.6vw,1.3125rem)] font-semibold tracking-[-0.02em] text-bone">
+                {BRAND.strapline}
+              </p>
+            </Reveal>
+            <Reveal delay={300}>
+              <Lede className="mt-4 max-w-[46ch] text-[clamp(1.0625rem,1.6vw,1.3125rem)]">
+                Your farm already produces every number you need. A diary just cannot connect them. Amrut keeps one
+                record — so egg stock, trader balances, per-shed cost and real P&amp;L are answered the moment you ask.
               </Lede>
             </Reveal>
-            <Reveal delay={330}>
+            <Reveal delay={410}>
               <div className="mt-10 flex flex-wrap items-center gap-3">
                 <Button href="#product" size="lg" magnetic icon={<ArrowRight size={16} />}>
                   Explore {BRAND.product}
@@ -113,7 +118,7 @@ export function Hero() {
                 </Button>
               </div>
             </Reveal>
-            <Reveal delay={440} className="mt-12 max-w-[38rem]">
+            <Reveal delay={520} className="mt-12 max-w-[38rem]">
               <p className="mb-3 text-[0.625rem] font-semibold uppercase tracking-[0.24em] text-ash-dim">
                 One connected chain
               </p>

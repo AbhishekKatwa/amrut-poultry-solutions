@@ -4,6 +4,7 @@ import { ScrollProgress } from '@/components/layout/ScrollProgress';
 import { Hero } from '@/components/sections/Hero';
 import { CompanyStory } from '@/components/sections/CompanyStory';
 import { CoreProblem } from '@/components/sections/CoreProblem';
+import { WhenYouNeedIt } from '@/components/sections/WhenYouNeedIt';
 import { Flagship } from '@/components/sections/Flagship';
 import { EggSales } from '@/components/sections/pillars/EggSales';
 import { TraderFlow } from '@/components/sections/pillars/TraderFlow';
@@ -19,8 +20,9 @@ import { Pricing } from '@/components/sections/Pricing';
 import { FinalCta } from '@/components/sections/FinalCta';
 
 /**
- * The order is the argument: what the business is → why the numbers are hard →
- * the product → the five systems that matter → one connected view → the ask.
+ * The order is the argument: who the company is → why managing by diary leaks →
+ * when those leaks start costing → the product → the five systems that matter →
+ * how the record works → one connected view → the ask.
  */
 export default function App() {
   return (
@@ -31,6 +33,7 @@ export default function App() {
         <Hero />
         <CompanyStory />
         <CoreProblem />
+        <WhenYouNeedIt />
         <Flagship />
         <div id="solutions" className="scroll-mt-24">
           <EggSales />

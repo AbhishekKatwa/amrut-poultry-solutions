@@ -283,8 +283,9 @@ export function CompanyStory() {
               Built from the poultry business, for the poultry business.
             </Display>
             <Lede className="mt-6 max-w-[42ch]">
-              Amrut Poultry Solutions focuses on solving the operational and financial complexity that comes with
-              running a modern poultry business.
+              A one-stop system for the whole poultry business — operations, feed and medicine inventory, egg sales,
+              traders, finance and P&amp;L in one record. That is what removes the operational and financial complexity
+              of running a modern farm.
             </Lede>
           </Reveal>
 

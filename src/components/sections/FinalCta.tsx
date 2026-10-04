@@ -152,7 +152,7 @@ export function FinalCta() {
             <Reveal delay={420} className="mt-11">
               <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
                 <Button href={BRAND.contact.tel} size="lg" magnetic icon={<Phone size={16} />}>
-                  Start 30-Day Free Trial
+                  Start Your First Month Free
                 </Button>
                 <Button href="#product" size="lg" variant="secondary">
                   Explore {BRAND.product}
@@ -162,10 +162,11 @@ export function FinalCta() {
 
             <Reveal delay={500} className="mt-10 w-full max-w-[24rem]">
               <Panel tone="sunken" className="px-4 py-4 text-left">
-                <p className="text-eyebrow font-semibold uppercase text-ash-dim">Call to start</p>
+                <p className="text-eyebrow font-semibold uppercase text-ash-dim">First month free</p>
                 <ContactNumber className="mt-3" />
                 <p className="mt-3 text-[0.75rem] leading-relaxed text-ash-dim">
-                  One number for the trial, assisted onboarding and anything about the product.
+                  One number to start your free month, ask about assisted onboarding, or anything else about the
+                  product.
                 </p>
               </Panel>
             </Reveal>

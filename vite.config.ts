@@ -16,8 +16,9 @@ function vendorChunk(id: string): string | undefined {
 }
 
 /**
- * The CLI reads this file through esbuild, which macOS TCC stalls on under ~/Documents.
- * `npm run dev|build` therefore points vite at ~/vite-configs/solutions-build.config.mjs.
+ * The config that ships with the repo — `npm run build` and CI/hosted builds use it.
+ * `npm run dev` still points at ~/vite-configs/solutions-build.config.mjs, because macOS TCC
+ * stalls esbuild on configs read from ~/Documents during a long-running dev session.
  */
 export default defineConfig({
   plugins: [react(), tailwindcss()],

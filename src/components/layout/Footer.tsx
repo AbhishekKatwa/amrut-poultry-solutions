@@ -41,14 +41,14 @@ export function Footer() {
                 href={BRAND.contact.tel}
                 className="group inline-flex items-center gap-1.5 text-[0.875rem] text-ash transition-colors hover:text-bone"
               >
-                Call to start a trial
+                Start your first month free
                 <Phone size={13} className="text-yolk-400" aria-hidden />
               </a>
               <a href="#pricing" className="text-[0.875rem] text-ash transition-colors hover:text-bone">
                 Plans and pricing
               </a>
               <a href="#trial" className="text-[0.875rem] text-ash transition-colors hover:text-bone">
-                30-day trial
+                First month free
               </a>
             </div>
           </nav>

@@ -22,15 +22,20 @@ const INCLUDED = [
   'Mobile and desktop use',
 ];
 
+/** The offer is the headline figure; the price is stated underneath it. */
 function PlanPrice({ plan }: { plan: Plan }) {
+  const headline = (
+    <p className="text-[clamp(1.625rem,2.7vw,2.125rem)] font-semibold leading-[1.08] tracking-[-0.035em] text-yolk-300">
+      First month free
+    </p>
+  );
+
   if (plan.monthly === null || plan.yearly === null) {
     return (
       <div>
-        <p className="text-[clamp(1.875rem,3.1vw,2.375rem)] font-semibold leading-none tracking-[-0.03em] text-bone">
-          Custom
-        </p>
-        <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-ash-dim">
-          Scope beyond a single farm — priced to the setup.
+        {headline}
+        <p className="mt-3 text-[0.8125rem] leading-relaxed text-ash-dim">
+          Custom pricing — scope beyond a single farm, quoted to the setup.
         </p>
       </div>
     );
@@ -38,14 +43,11 @@ function PlanPrice({ plan }: { plan: Plan }) {
 
   return (
     <div>
-      <div className="flex items-baseline gap-1.5">
-        <span className="tnum text-[clamp(1.875rem,3.1vw,2.375rem)] font-semibold leading-none tracking-[-0.04em] text-bone">
-          {inr(plan.monthly)}
-        </span>
-        <span className="text-[0.8125rem] font-medium text-ash-dim">/ month</span>
-      </div>
-      <p className="tnum mt-2.5 text-[0.8125rem] text-ash-dim">
-        or {inr(plan.yearly)} per year
+      {headline}
+      <p className="mt-3 text-[0.8125rem] leading-relaxed text-ash-dim">
+        then <span className="tnum text-bone/90">{inr(plan.monthly)}</span> / month
+        <br />
+        or <span className="tnum">{inr(plan.yearly)}</span> per year
       </p>
     </div>
   );
@@ -100,9 +102,9 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
                 size={featured ? 'lg' : 'md'}
                 magnetic={featured}
                 icon={featured ? <Phone size={16} /> : undefined}
-                ariaLabel={`${featured ? 'Call to start a 30-day trial' : `Call to choose ${plan.name}`}: ${BRAND.contact.display}`}
+                ariaLabel={`${featured ? 'Call to start your first month free' : `Call to choose ${plan.name}`}: ${BRAND.contact.display}`}
               >
-                {featured ? 'Start 30-day trial' : `Choose ${plan.name}`}
+                {featured ? 'Start free' : `Choose ${plan.name}`}
               </Button>
             </div>
           </Panel>
@@ -125,7 +127,7 @@ export function Pricing() {
             <Display className="mt-6 max-w-[22ch]">Priced per farm, on the birds it carries.</Display>
             <Lede className="mt-6 max-w-[52ch]">
               {BRAND.product} is the product of {BRAND.company}. Each plan covers one farm, sized by bird capacity —
-              the tiers below are the whole of it.
+              and every plan starts with its <span className="text-yolk-300">first month free</span>.
             </Lede>
           </Reveal>
         </div>
@@ -133,11 +135,12 @@ export function Pricing() {
         <Reveal delay={140} className="lg:col-span-5">
           <Panel tone="sunken" className="space-y-1">
             <div className="flex items-baseline justify-between gap-4">
-              <span className="text-[0.8125rem] text-ash">{PLAN_NOTE.trial}</span>
+              <span className="text-[0.875rem] font-semibold text-bone">{PLAN_NOTE.trial}</span>
               <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-yolk-400">
-                Included
+                Every plan
               </span>
             </div>
+            <p className="mt-1 text-[0.75rem] leading-relaxed text-ash-dim">{PLAN_NOTE.trialNote}</p>
             <Rule className="my-3" />
             <div className="flex items-baseline justify-between gap-4">
               <span className="text-[0.8125rem] text-ash">{PLAN_NOTE.onboarding}</span>

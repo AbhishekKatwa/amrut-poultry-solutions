@@ -1,5 +1,5 @@
 import { type CSSProperties, useMemo } from 'react';
-import { BRAND, PIPELINE } from '@/lib/content';
+import { BRAND, HOW_STEPS, PIPELINE } from '@/lib/content';
 import { lerp, phase, useCoarsePointer, useMediaQuery, usePrefersReducedMotion, useScrollProgress } from '@/lib/motion';
 import { Reveal } from '@/components/ui/Reveal';
 import { Divider, Glow, Rule } from '@/components/ui/Surface';
@@ -258,15 +258,18 @@ export function Ecosystem() {
         <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8">
           <div className="mx-auto max-w-[54rem] text-center">
             <Reveal direction="fade">
-              <Eyebrow className="justify-center">The Amrut Ecosystem</Eyebrow>
+              <Eyebrow className="justify-center">How it works</Eyebrow>
             </Reveal>
             <Reveal delay={80}>
               <Display size="lg" className="mt-6">
-                From farm activity to business intelligence.
+                Only the first step is manual.
               </Display>
             </Reveal>
             <Reveal delay={160}>
-              <Lede className="mx-auto mt-6 max-w-[46ch]">One connected view of the poultry business.</Lede>
+              <Lede className="mx-auto mt-6 max-w-[52ch]">
+                Record the day once, at the place it happened. Everything after that is arithmetic the system does
+                whenever you ask — not a report someone assembles at month end.
+              </Lede>
             </Reveal>
           </div>
 
@@ -292,12 +295,31 @@ export function Ecosystem() {
             </div>
           </Reveal>
 
+          {/* the mechanism, in the order it happens on the farm */}
+          <div className="mx-auto mt-16 max-w-[1180px] sm:mt-20">
+            <div className="grid gap-x-10 gap-y-10 md:grid-cols-3">
+              {HOW_STEPS.map((step, i) => (
+                <Reveal key={step.n} delay={i * 90} className="border-t border-hairline-bright pt-6">
+                  <div className="flex items-baseline gap-3">
+                    <span className="tnum shrink-0 text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-yolk-500">
+                      {step.n}
+                    </span>
+                    <h3 className="text-[clamp(1.125rem,1.9vw,1.5rem)] font-semibold leading-snug tracking-[-0.025em] text-bone">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p className="mt-4 max-w-[44ch] text-[0.9375rem] leading-relaxed text-ash">{step.body}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
           <Reveal delay={140} className="mt-14 sm:mt-20">
             <div className="mx-auto max-w-[64rem]">
               <Rule />
               <div className="grid gap-8 pt-9 md:grid-cols-12 md:gap-10">
                 <div className="md:col-span-5">
-                  <Eyebrow tone="bone">What "connected" means here</Eyebrow>
+                  <Eyebrow tone="bone">Why it stays true</Eyebrow>
                 </div>
                 <div className="md:col-span-7">
                   <p className="text-[clamp(1.0625rem,1.7vw,1.3125rem)] leading-relaxed text-bone">

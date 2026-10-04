@@ -54,12 +54,12 @@ export function Navbar() {
           <Wordmark compact={scrolled} />
         </a>
 
-        <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-9" aria-label="Primary">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="relative text-[0.8125rem] font-medium tracking-tight text-ash transition-colors duration-300 hover:text-bone"
+              className="relative whitespace-nowrap text-[0.8125rem] font-medium tracking-tight text-ash transition-colors duration-300 hover:text-bone"
             >
               {item.label}
             </a>
@@ -69,7 +69,7 @@ export function Navbar() {
         <div className="hidden items-center gap-4 lg:flex">
           <a
             href={BRAND.contact.tel}
-            className="inline-flex items-center gap-2 text-[0.8125rem] font-medium text-ash transition-colors hover:text-bone"
+            className="hidden items-center gap-2 whitespace-nowrap text-[0.8125rem] font-medium text-ash transition-colors hover:text-bone xl:inline-flex"
           >
             <Phone size={14} className="text-yolk-400" aria-hidden />
             <span className="tnum">{BRAND.contact.display}</span>
