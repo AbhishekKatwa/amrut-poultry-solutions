@@ -1,0 +1,34 @@
+{
+  "name": "amrut-poultry-solutions",
+  "private": true,
+  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Amrut Poultry Solutions — the promotional site for the company behind Amrut Poultry Management",
+  "scripts": {
+    "dev": "vite --config /Users/madhukatwa/vite-configs/solutions-build.config.mjs --port 5199 --strictPort",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "build": "vite build --config /Users/madhukatwa/vite-configs/solutions-build.config.mjs",
+    "preview": "vite preview --config /Users/madhukatwa/vite-configs/solutions-build.config.mjs"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.469.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-refresh": "^0.19.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.7"
+  }
+}

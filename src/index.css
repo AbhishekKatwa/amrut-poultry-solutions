@@ -1,0 +1,328 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   AMRUT POULTRY SOLUTIONS — design tokens
+   A technology company with a poultry identity, not a farm site.
+   Near-black ground, warm egg-amber accent, one muted green,
+   one cold blue reserved for data.
+   ============================================================ */
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Ground */
+  --color-night-950: #060808;
+  --color-night-900: #0a0d0d;
+  --color-night-850: #0e1212;
+  --color-night-800: #121716;
+  --color-night-700: #182120;
+  --color-night-600: #202b29;
+  --color-hairline: #232d2b;
+  --color-hairline-bright: #33403d;
+
+  /* Warm egg accent */
+  --color-yolk-200: #ffe6b0;
+  --color-yolk-300: #ffd484;
+  --color-yolk-400: #f7c25c;
+  --color-yolk-500: #efa93a;
+  --color-yolk-600: #cf8a1e;
+
+  /* Neutrals for type */
+  --color-bone: #f4f1e9;
+  --color-ash: #a3aca8;
+  --color-ash-dim: #6d7672;
+
+  /* Support */
+  --color-moss: #4f8a68;
+  --color-moss-deep: #2c5c44;
+  --color-steel: #6f97be;
+  --color-clay: #b4553f;
+
+  /* The product's own light interface, mirrored so mockups look like the real app */
+  --color-paper: #fafaf8;
+  --color-paper-2: #f3f5f1;
+  --color-paper-line: #e3e7e3;
+  --color-forest-900: #123c2a;
+  --color-forest-700: #1b5e3b;
+  --color-forest-500: #2e6b4f;
+  --color-ink: #17201b;
+  --color-ink-soft: #66706a;
+  --color-gold-600: #c9972e;
+
+  /* Type scale — headlines carry the drama */
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--letter-spacing: 0.24em;
+  --text-eyebrow--line-height: 1.2;
+
+  --text-display: 4.25rem;
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.035em;
+
+  --text-display-sm: 2.5rem;
+  --text-display-sm--line-height: 1.04;
+  --text-display-sm--letter-spacing: -0.03em;
+
+  --text-headline: 3rem;
+  --text-headline--line-height: 1.05;
+  --text-headline--letter-spacing: -0.032em;
+
+  --text-sub: 1.25rem;
+  --text-sub--line-height: 1.55;
+  --text-sub--letter-spacing: -0.012em;
+
+  --text-metric: 3.25rem;
+  --text-metric--line-height: 1;
+  --text-metric--letter-spacing: -0.04em;
+
+  /* Radii — generous surfaces, tight controls */
+  --radius-card: 22px;
+  --radius-panel: 16px;
+  --radius-control: 11px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-night-950);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11' 1, 'ss01' 1;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-yolk-500);
+    color: var(--color-night-950);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-yolk-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  section[id] {
+    scroll-margin-top: 92px;
+  }
+}
+
+@layer utilities {
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 3D stage helpers */
+  .stage {
+    perspective: 1400px;
+  }
+  .stage-near {
+    perspective: 900px;
+  }
+  .d3 {
+    transform-style: preserve-3d;
+  }
+  .backface {
+    backface-visibility: hidden;
+  }
+
+  .fade-edges {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  .fade-right {
+    -webkit-mask-image: linear-gradient(to right, #000 72%, transparent);
+    mask-image: linear-gradient(to right, #000 72%, transparent);
+  }
+
+  /* Thin rim light used on raised panels */
+  .rim {
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.06),
+      0 24px 60px -30px rgb(0 0 0 / 0.9);
+  }
+
+  .rim-amber {
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 212 132 / 0.14),
+      0 30px 80px -40px rgb(239 169 58 / 0.35);
+  }
+
+  /* Film grain — keeps the black from looking flat */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  .rule-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .animate-drift {
+    animation: drift 14s ease-in-out infinite;
+  }
+  .animate-drift-slow {
+    animation: drift 22s ease-in-out infinite;
+  }
+  .animate-pulse-soft {
+    animation: pulse-soft 4.5s ease-in-out infinite;
+  }
+  .animate-sheen {
+    animation: sheen 6s linear infinite;
+  }
+  .animate-dash {
+    animation: dash 2.4s linear infinite;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-120%);
+  }
+  60%,
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+/** A full-page capture travelling through a shorter frame. */
+@keyframes shot-pan {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, var(--pan-end, 0%), 0);
+  }
+}
+
+@keyframes rise {  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Contact number — react-phone-input-2 restyled for the night palette.
+   Specificity is deliberately above the library's own rules.
+   ---------------------------------------------------------------- */
+.contact-phone .react-tel-input {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.contact-phone .react-tel-input .form-control {
+  width: 100%;
+  height: 3.25rem;
+  padding-left: 3.5rem;
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  color: var(--color-bone);
+  background: rgb(255 255 255 / 3.5%);
+  border: 1px solid var(--color-hairline-bright);
+  border-radius: var(--radius-control);
+  transition: border-color 300ms ease-out, background-color 300ms ease-out, box-shadow 300ms ease-out;
+}
+
+.contact-phone .react-tel-input .form-control:hover {
+  background: rgb(255 255 255 / 5.5%);
+}
+
+.contact-phone .react-tel-input .form-control:focus {
+  background: rgb(255 255 255 / 6%);
+  border-color: rgb(247 194 92 / 55%);
+  box-shadow: 0 0 0 3px rgb(247 194 92 / 12%);
+}
+
+.contact-phone .react-tel-input .flag-dropdown {
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.6rem;
+  background-color: transparent;
+  border: 0;
+  border-right: 1px solid var(--color-hairline-bright);
+  border-radius: calc(var(--radius-control) - 2px) 0 0 calc(var(--radius-control) - 2px);
+}
+
+.contact-phone .react-tel-input .selected-flag {
+  position: static;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: transparent;
+}
+
+.contact-phone .react-tel-input .country-list {
+  display: none;
+}
